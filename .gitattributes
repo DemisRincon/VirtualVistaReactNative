@@ -1,4 +1,3 @@
 *.pbxproj -text
-* linguist-vendored
 *.jsx linguist-language=ReactNative
 *.js linguist-language=JavaScript
