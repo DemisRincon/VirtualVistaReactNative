@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const SplashScreen = ({navigation}) => {
+const ResponseMenuScreen = ({navigation}) => {
   const res = navigation.getParam('res');
   res.responses[0].webDetection &&
     res.responses[0].webDetection.webEntities.forEach(item => {
@@ -22,4 +22,4 @@ const SplashScreen = ({navigation}) => {
   );
 };
 
-export default SplashScreen;
+export default ResponseMenuScreen;

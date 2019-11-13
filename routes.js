@@ -1,6 +1,6 @@
 import Home from './src/Components/Home';
 import Camera from './src/Components/CameraScreen';
-import MenuResponse from './src/Components/ResponseMenuScreen';;
+import MenuResponse from './src/Components/ResponseMenuScreen';
 export default {
   Home: {
     screen: Home,

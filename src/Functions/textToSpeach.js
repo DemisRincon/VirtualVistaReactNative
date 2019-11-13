@@ -1,4 +1,7 @@
 import Tts from 'react-native-tts';
+export const stopSpeach = () => {
+  Tts.stop();
+};
 const textToSpeach = text =>
   Tts.speak(text, {
     androidParams: {
