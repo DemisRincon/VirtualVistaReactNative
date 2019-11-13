@@ -1,6 +1,7 @@
 import Tts from 'react-native-tts';
-export const stopSpeach = () => {
-  Tts.stop();
+export const stopSpeach = async () => {
+  let stop = await Tts.stop();
+  return stop;
 };
 const textToSpeach = text =>
   Tts.speak(text, {
@@ -10,4 +11,5 @@ const textToSpeach = text =>
       KEY_PARAM_STREAM: 'STREAM_MUSIC',
     },
   });
+
 export default textToSpeach;

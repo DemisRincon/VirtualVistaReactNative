@@ -65,12 +65,6 @@ const Camera = ({navigation: {navigate}}) => {
 
   return (
     <View style={styles.Container}>
-      {/*webEntities.length !== 0 && (
-        <Button
-          title="web entities"
-          onPress={() => Alert.alert('Simple Button pressed')}
-        />
-      )*/}
       {isLoading && <LoadingScren />}
       {!isLoading && (
         <>
