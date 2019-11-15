@@ -1,8 +1,5 @@
-import {Dimensions} from 'react-native';
-const deviceWidth = Dimensions.get('screen').width;
-const deviceHeight = Dimensions.get('screen').height;
 const styles = {
-  ViewStyle: {
+  PrincipalView: {
     flex: 1,
     flexDirection: 'column',
     backgroundColor: 'powderblue',
@@ -21,6 +18,11 @@ const styles = {
   },
   Instructions: {
     backgroundColor: '#4B0E86',
+  },
+  ButtonsText: {
+    color: 'white',
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 };
 export default styles;

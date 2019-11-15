@@ -9,8 +9,7 @@ const AppContainer = createAppContainer(
     defaultNavigationOptions: {
       header: null,
     },
-    /* mode: 'modal',*/
-    initialRouteName: 'Home',
+
     transitionConfig: () => ({
       transitionSpec: {
         duration: 300,

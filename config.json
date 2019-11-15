@@ -1,7 +1,6 @@
 {
   "googleCloud": {
-    "apiKey": "AIzaSyA7Ell3T1ZefZNuqetCdyVCUGVY8DqrxJE",
     "api": "https://vision.googleapis.com/v1/images:annotate?key=",
-    "textToSpeach":"https: //texttospeech.googleapis.com/v1/text:synthesize?key="
+    "apiKey": "Entetr your own api key here"
   }
 }
