@@ -19,11 +19,11 @@ export default class SplashCompoent extends Component {
   async componentDidMount() {
     await performSpeak(InitialText);
   }
-  handleOpenCamera = () => {
+  handleOpenCamera = async () => {
     console.log('pressed');
     const {navigate} = this.props.navigation;
-    performSpeak(cameraLongPress);
-    navigate('Camera');
+    await performSpeak(cameraLongPress);
+    await navigate('Camera');
   };
   render() {
     return (
