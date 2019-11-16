@@ -145,5 +145,20 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  ProccesView: {
+    position: 'absolute',
+    width: deviceWidth,
+    height: deviceHeight,
+    zIndex: 1,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+  },
+  ButtonsText: {
+    color: 'white',
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
 };
 export default styles;
