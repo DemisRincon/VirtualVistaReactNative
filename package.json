@@ -8,6 +8,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "google-translate-api": "^2.3.0",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",

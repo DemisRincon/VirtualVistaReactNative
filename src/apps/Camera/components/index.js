@@ -4,14 +4,28 @@ import {RNCamera} from 'react-native-camera';
 import styles from './CameraStyles';
 import performSpeak from '../../../shared/Methods/textToSpeach';
 import getPictureInfo from '../../../shared/Methods/getPictureInfo';
-
+import {
+  handleAndroidBackButton,
+  removeAndroidBackButtonHandler,
+} from '../../../shared/Methods/backMethod';
 export default class index extends Component {
   state = {
     isPhotoTaken: false,
   };
   async componentDidMount() {
+    handleAndroidBackButton(this.backPressed);
     await performSpeak('Estás en cámara');
   }
+  componentWillUnmount() {
+    removeAndroidBackButtonHandler(this.backPressed);
+  }
+
+  backPressed = () => {
+    this.props.navigation.goBack();
+    console.log('back');
+    performSpeak('Estás en el menú principal');
+    return true;
+  };
   takePicture = async value => {
     if (value) {
       const options = {quality: 0.1, base64: true};
@@ -36,16 +50,17 @@ export default class index extends Component {
         'resultados no obtenidos, revise su connexion a internet',
       );
     }
+    this.setState({isPhotoTaken: false});
   };
   render() {
     const {isPhotoTaken} = this.state;
     return (
       <>
-        {isPhotoTaken ?(
+        {isPhotoTaken ? (
           <View style={styles.ProccesView}>
             <Text style={styles.ButtonsText}>Procesando</Text>
           </View>
-) : (
+        ) : (
           <TouchableOpacity
             onPress={() => this.takePicture(this.camera)}
             style={styles.Button}>
