@@ -33,6 +33,9 @@ export default class index extends Component {
     return true;
   };
   takePicture = async value => {
+    this.setState({
+      firstElementFound: '',
+    });
     if (value) {
       const options = {quality: 0.1, base64: true};
       const getData = await Promise.all([value.takePictureAsync(options)]);
@@ -50,11 +53,10 @@ export default class index extends Component {
       const res =
         response[0].responses[0].webDetection.webEntities[0].description;
       const traduction = await translate(res);
-
-      await performSpeak(traduction.data.translations[0].translatedText);
       this.setState({
         firstElementFound: traduction.data.translations[0].translatedText,
       });
+      await performSpeak(traduction.data.translations[0].translatedText);
     } else {
       await performSpeak(
         'resultados no obtenidos, revise su connexion a internet',
