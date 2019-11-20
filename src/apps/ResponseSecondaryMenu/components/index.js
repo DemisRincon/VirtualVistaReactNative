@@ -21,7 +21,7 @@ export default class index extends Component {
   componentDidMount = async () => {
     handleAndroidBackButton(this.backPressed);
     const {navigation} = this.props;
-    const response = navigation.getParam('list').slice(0,10);
+    const response = navigation.getParam('list').slice(0, 10);
     const text = navigation.getParam('text');
     await performSpeak('Estás en el menú de ' + text);
     response.forEach(async element => {

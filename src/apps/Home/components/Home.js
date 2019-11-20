@@ -25,6 +25,13 @@ export default class SplashCompoent extends Component {
     await performSpeak(cameraLongPress);
     await navigate('Camera');
   };
+
+  handleOpenContinueCamera = async () => {
+    console.log('continue camera');
+    const { navigate } = this.props.navigation;
+    await performSpeak(cameraLongPress);
+    await navigate('ContinueCamera');
+  }
   render() {
     return (
       <View style={styles.PrincipalView}>
@@ -38,7 +45,13 @@ export default class SplashCompoent extends Component {
           onPress={() => performSpeak(cameraPress)}
           onLongPress={this.handleOpenCamera}
           style={Object.assign(styles.Camera, styles.ViewContainer)}>
-          <Text style={styles.ButtonsText}>Camara</Text>
+          <Text style={styles.ButtonsText}>Captura de imagen</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => performSpeak(cameraPress)}
+          onLongPress={this.handleOpenContinueCamera}
+          style={Object.assign(styles.Camera, styles.ViewContainer)}>
+          <Text style={styles.ButtonsText}>Captura continua</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => performSpeak(instructionsPress)}
