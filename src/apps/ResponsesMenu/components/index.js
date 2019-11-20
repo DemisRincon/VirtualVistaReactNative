@@ -13,7 +13,7 @@ export default class ResponsesMenu extends Component {
     webDetection: [],
   };
   async componentDidMount() {
-    handleAndroidBackButton(this.backPressed)
+    handleAndroidBackButton(this.backPressed);
     const {navigation} = this.props;
     const response = navigation.getParam('res').responses[0];
     if (response) {
@@ -45,7 +45,7 @@ export default class ResponsesMenu extends Component {
     if (list.length) {
       await performSpeak('redirigiendo a el menú de ' + text);
       const {navigate} = this.props.navigation;
-      await navigate('ResponsesMenuSecondary', {list});
+      await navigate('ResponsesMenuSecondary', {list, text});
     } else {
       await performSpeak(
         'No se puede entrar al menú de ' +

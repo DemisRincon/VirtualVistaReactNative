@@ -50,7 +50,7 @@ export default class index extends Component {
         'resultados no obtenidos, revise su connexion a internet',
       );
     }
-    this.setState({isPhotoTaken: false});
+    this.setState({ isPhotoTaken: false });
   };
   render() {
     const {isPhotoTaken} = this.state;
